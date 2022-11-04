@@ -1,26 +1,19 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.md-wrapper h1 {
+  font-size: 20pt;
+  font-weight: bold;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.md-wrapper h2 {
+  font-size: 18pt;
+  font-weight: bold;
 }
 
-* {
-  box-sizing: border-box;
+.md-wrapper h3 {
+  font-size: 15pt;
+  font-weight: bold;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.md-wrapper h4 {
+  font-size: 12pt;
+  font-weight: bold;
 }
