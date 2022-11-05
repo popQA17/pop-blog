@@ -14,7 +14,7 @@ export default function Home({tags, posts}){
         }
     }, [tags])
     return(<>
-    <VStack bg={useColorModeValue("gray.50", 'gray.700')} backgroundImage={useColorModeValue("https://preview.redd.it/oe901qo4hth61.png?width=3840&format=png&auto=webp&s=eac9b8f429cf2d88a84ed865b6ee5493ff452dcb", "/spaceBG.jpg")} height={'80vh'} w={'full'} justifyContent={'center'}>
+    <VStack bg={useColorModeValue("gray.50", 'gray.700')} backgroundImage={useColorModeValue("/spaceBGlight.jpg", "/spaceBG.jpg")} height={'80vh'} w={'full'} justifyContent={'center'}>
         <Avatar src="https://cdn.discordapp.com/avatars/729975591406796840/fef4ae376b7f80308c274ae346585d71.webp" size={'lg'} height={'150px'} width={'150px'} name={'Pop Plays'}/>
         <Heading>Pop&apos;s Blog</Heading>
         <HStack mt={'20px !important'}>

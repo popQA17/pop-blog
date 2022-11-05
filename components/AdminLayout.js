@@ -6,11 +6,10 @@ import $ from 'jquery'
 import { API_URL } from "../config";
 import Cookies from 'js-cookie'
 
-export default function AdminLayout({children}){
+export default function AdminLayout({children, isLoggedIn, setIsLoggedIn}){
     const [loading, setLoading] = useState(true)
     const router = useRouter()
     const pathName = router.pathname
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
     useEffect(()=>{
         async function checkAdmin(){
             if (Cookies.get('code')){

@@ -2,11 +2,11 @@ import { Badge, Button, HStack, Icon, Spacer, Text, Tooltip, useColorModeValue, 
 import { useRouter } from "next/router";
 import { FaClock } from "react-icons/fa";
 import { getTimeString, timeDiff } from "./timeDiff";
-
-export default function PostCard({data}){
+import { motion } from 'framer-motion'
+export default function PostCard({data, translucent}){
     const router = useRouter()
     return(<>
-    <HStack shadow={'base'} alignItems={'flex-start'} minHeight={'100px'} width={'full'} rounded={'lg'} bg={useColorModeValue('gray.100', 'gray.700')} p={'10px'} px={'20px'} >
+    <HStack backdropFilter={'blur(10px)'} shadow={'base'} alignItems={'flex-start'} minHeight={'100px'} width={'full'} rounded={'lg'} bg={useColorModeValue(translucent ? 'gray.50' : 'gray.100', translucent ? 'blackAlpha.300' : 'gray.700')} p={'10px'} px={'20px'} >
         <VStack alignItems={'flex-start'} minHeight={'full'} justifyContent={'center'}>
             <HStack>
                 <Text fontWeight={'semibold'} fontSize={'2xl'}>{data.title}</Text>

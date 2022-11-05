@@ -19,15 +19,19 @@ export default function App({Component, pageProps}){
             setPosts([...res.posts])
         })
     }, [])
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [searched, setSearched] = useState(false)
+    const [result, setResult] = useState([])
+    const [query, setQuery] = useState("")
     return(<>
     <ChakraProvider >
-        <Navbar/>
+        <Navbar query={query} setQuery={setQuery} result={result} setResult={setResult} setSearched={setSearched} searched={searched}/>
         {router.pathname.startsWith("/admin") ?
-        <AdminLayout>
-            <Component posts={posts} tags={tags} {...pageProps}/>
+        <AdminLayout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+            <Component posts={posts} setPosts={setPosts} tags={tags} {...pageProps}/>
         </AdminLayout>
         :
-            <Component posts={posts} tags={tags} {...pageProps}/>
+            <Component query={query} setQuery={setQuery} result={result} setResult={setResult} setSearched={setSearched} searched={searched} posts={posts} tags={tags} {...pageProps} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         }
     </ChakraProvider>
     </>)
